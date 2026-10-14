@@ -45,8 +45,10 @@ The product owner answers questions and approves the plan (or asks for changes).
 ### Stage 6 — Manual test → fix → done
 - The product owner runs the checklist and reports results.
 - Failures are fixed **on the same branch** and handed back for re-test.
-- On acceptance: the PR is merged into `main` (squash), the branch is deleted, the task's row in `ROADMAP.md` is
-  set to ✅, the task moves to the completed log below, and the next task is set as Current Task.
+- On acceptance, the agent adds the **close-out commit on the same branch**: the task's row in `ROADMAP.md` is set
+  to ✅, the task moves to the completed log below, the next task is set as Current Task, and the plan status says
+  accepted. Then the product owner squash-merges the PR into `main`. There is no separate close-out PR.
+- Branches are **never deleted** after merge (locally or on GitHub).
 - Bugs found later in already-merged work get their own `fix/<name>` branch and go through the same workflow (with a short plan).
 
 **Never:** skip a ⛔ stop, start the next task on your own, change product behavior, merge to `main` without

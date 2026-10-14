@@ -19,7 +19,8 @@ main ──●────────●────────●────
 - Every task from `ROADMAP.md` gets **one branch**, created from the latest `main`.
 - **Every branch (`feature/`, `fix/`, `hotfix/`, `chore/`, `refactor/`, `docs/`, `test/`) merges into `main` only
   through a GitHub Pull Request.** Never merge locally into `main` (`git merge` on `main`) and never push to `main` directly.
-- Branches are short-lived. Merge within the task, then delete.
+- Branches are short-lived: merge within the task. **Branches are never deleted** (locally or on GitHub), even after
+  their PR is merged. They are the record of each task.
 - Releases are **tags** on `main` (see Releases), not long-lived release branches.
 
 ---
@@ -75,7 +76,8 @@ chore(deps): add equatable [HRT-001]
 Every branch merges into `main` through a PR. There are no exceptions: no local merges into `main`, no direct pushes.
 
 **Title:** same format as a commit: `feat(heart): open a heart UI [HRT-008]`
-**Merge method:** **Squash and merge.** The squash commit keeps the PR title. Delete the branch after merge.
+**Merge method:** **Squash and merge.** The squash commit keeps the PR title (edit it in the merge box if GitHub fills in the branch name).
+Do not delete the branch after merge, and keep GitHub's "Automatically delete head branches" setting off.
 
 ### PR template (`.github/pull_request_template.md`)
 
@@ -104,6 +106,8 @@ HRT-XXX — <Feature> · Plan: docs/plans/HRT-XXX-<name>.md
 
 ### Merge rules
 - Merge only after the product owner accepts manual testing.
+- The task's close-out commit (ROADMAP ✅, completed log, next Current Task, plan status) is the **last commit on the
+  task branch**, made after acceptance and before the merge. There is no separate close-out PR.
 - The branch must be up to date with `main`. Rebase onto `main` before merging (`git pull --rebase origin main`).
 - CI (once it exists, HRT-024) must be green.
 
@@ -126,8 +130,8 @@ git fetch origin && git rebase origin/main
 # Publish & open PR
 git push -u origin feature/heart-raise-ui
 
-# After merge
-git checkout main && git pull && git branch -d feature/heart-raise-ui
+# After merge (the branch is kept)
+git checkout main && git pull
 ```
 
 ---
@@ -165,5 +169,6 @@ If a secret is ever committed: **rotate it immediately**. Removing it from histo
 2. Create the task branch **after** the plan is approved, using the branch name in `ROADMAP.md`.
 3. One task per branch. Don't sneak unrelated changes in. Note them as follow-ups instead.
 4. Never merge a PR yourself unless the product owner explicitly says so after manual testing passes.
-5. Never commit secrets. If a task needs a new secret, add the key name (empty) to `.env.example` and tell the product owner.
-6. Before handing over for testing, make sure the branch is pushed, the working tree is clean, and the PR description is filled in.
+5. Never delete a branch, local or remote.
+6. Never commit secrets. If a task needs a new secret, add the key name (empty) to `.env.example` and tell the product owner.
+7. Before handing over for testing, make sure the branch is pushed, the working tree is clean, and the PR description is filled in.
