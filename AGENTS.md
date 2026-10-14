@@ -45,7 +45,7 @@ Find any doc fast with `docs/INDEX.md`.
 - Flutter + Dart (iOS + Android only), in `app/`
 - **Feature-first clean architecture:** `features/<f>/{domain, data, presentation}` (see `FLUTTER_GUIDE.md`)
 - BLoC for state (never Provider/Riverpod/GetX/setState) · GoRouter (never `Navigator.push`) · fpdart `Either`
-- Node.js 20 + TypeScript strict + Express + Zod, in `backend/` (Google Cloud Run)
+- Node.js 22 + TypeScript strict + Express + Zod, in `backend/` (Google Cloud Run)
 - Supabase: Postgres + RLS + Realtime + Auth + Storage; migrations in `supabase/migrations/`
 - Firebase Cloud Messaging (client: `firebase_messaging`, server: `firebase-admin`)
 - Anthropic API, **server-side only**, with the model from config

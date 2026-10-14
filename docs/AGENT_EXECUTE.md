@@ -73,7 +73,7 @@ Initialize the monorepo so every later task has a clean, predictable home.
 - [ ] All docs moved into `docs/`; `AGENTS.md` at the repo root
 - [ ] Figma Make mock export placed in `design/figma-mock/` (reference only)
 - [ ] `README.md`: what Heartline is (2 lines), repo layout, links to `AGENTS.md` and `docs/INDEX.md`, prerequisites
-      (Flutter, Node 20, Supabase CLI), and placeholders for run instructions
+      (Flutter, Node 22, Supabase CLI), and placeholders for run instructions
 - [ ] `.gitignore` covering Flutter, Dart, Node, macOS, IDEs, and secrets (see `GIT_GUIDE.md` → "Never Commit")
 - [ ] `.github/pull_request_template.md` from `GIT_GUIDE.md`
 - [ ] Initial commit on `main` (docs only), then this task's work on `chore/repo-setup`
