@@ -35,7 +35,7 @@ Full layout: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) → "Repository Layo
 
 ## Prerequisites
 
-- [Flutter](https://docs.flutter.dev/get-started/install) (stable channel), with Xcode (iOS) and Android Studio (Android)
+- [Flutter](https://docs.flutter.dev/get-started/install) (stable channel), with Xcode + CocoaPods (iOS) and Android Studio + JDK 17 (Android)
 - [Node.js 22](https://nodejs.org/)
 - [Supabase CLI](https://supabase.com/docs/guides/cli)
 - Git (and optionally the [GitHub CLI](https://cli.github.com/))
@@ -48,7 +48,17 @@ Full layout: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) → "Repository Layo
 
 ### App (`app/`)
 
-_Added in HRT-001 (Project Scaffold)._
+```bash
+cd app
+flutter pub get
+flutter run --dart-define=USE_MOCKS=true
+```
+
+- `USE_MOCKS` defaults to `true` (Part A builds every screen on mock data).
+- `flutter analyze` must report 0 issues; `flutter test` runs the tests.
+- Android needs a JDK that the project's Gradle supports (Java 17–24). If Flutter picks up Android Studio's
+  newer bundled JDK, point it at a supported one once: `flutter config --jdk-dir="<path to JDK 17>"`.
+- iOS needs Xcode with an iOS Simulator runtime and a working CocoaPods install.
 
 ### Backend (`backend/`)
 
