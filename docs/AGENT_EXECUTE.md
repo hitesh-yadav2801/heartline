@@ -75,9 +75,10 @@ No feature logic yet. This is just the skeleton that everything else builds on.
 
 - [ ] Flutter project created: `flutter create app --project-name heartline --org app.heartline --platforms=android,ios` (run at repo root → `app/`)
 - [ ] Folder structure matches the feature-first clean architecture in `FLUTTER_GUIDE.md` (core/, shared/, features/<f>/{domain,data,presentation})
-- [ ] `pubspec.yaml` has exactly the packages from `FLUTTER_GUIDE.md` (incl. `firebase_core`, `flutter_svg`; **no** `google_fonts`)
+- [ ] `pubspec.yaml` has exactly the packages from `FLUTTER_GUIDE.md` (incl. `firebase_core`, `flutter_svg`, ObjectBox; **no** `google_fonts`), added with `flutter pub add` (latest compatible versions)
 - [ ] Fonts bundled: Cormorant Garamond + DM Sans `.ttf` files in `assets/fonts/`, `fonts:` block from `DESIGN_SYSTEM.md` in pubspec
-- [ ] `assets/icons/` and `assets/lottie/` folders created and registered in pubspec
+- [ ] App locked to portrait (Android, iOS, and `SystemChrome`)
+- [ ] `assets/icons/` and `assets/lottie/` are **not** created yet (added by the first task that puts a file in them)
 - [ ] `AppColors` — full single-theme palette, translucent layers, feeling + mood + quick-action colors (mock-aligned)
 - [ ] `AppGradients`, `AppShadows`, `AppSizes` defined per `DESIGN_SYSTEM.md`
 - [ ] `AppTextStyles` — full type scale (displayXl → micro + quote) using the bundled families
@@ -145,7 +146,7 @@ app/lib/
       glass_card.dart
       heartline_background.dart
 app/pubspec.yaml
-app/assets/ (fonts, icons, lottie)
+app/assets/fonts/
 ```
 
 ### Do Not Touch

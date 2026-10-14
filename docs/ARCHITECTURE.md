@@ -10,17 +10,18 @@
 ### Frontend
 - **Framework:** Flutter (Dart)
 - **Platforms:** iOS + Android only (no web, no desktop)
-- **Min SDK:** Android 21 / iOS 14
+- **Min SDK:** Android 24 / iOS 15 (current Flutter and Firebase minimums)
+- **Orientation:** Portrait only
 - **State Management:** BLoC (flutter_bloc) — no Provider, no Riverpod, no GetX
 - **Navigation:** GoRouter — no Navigator.push anywhere in the codebase
 - **Error Handling:** fpdart (Either, Option) — no raw try/catch in business logic
 - **Networking:** Dio with interceptors for auth headers and error normalization
-- **Local Storage:** Hive for offline cache, flutter_secure_storage for tokens
+- **Local Storage:** ObjectBox for offline cache, flutter_secure_storage for tokens
 - **Push Notifications:** Firebase Cloud Messaging (FCM) via `firebase_core` + `firebase_messaging`
 - **Animations:** Built-in Flutter animations + Lottie for celebration sequences
 - **Design system:** `HEARTLINE_UI_UX_SPEC.md` (source of truth) → tokens in `DESIGN_SYSTEM.md`. Single dark theme (no light mode).
 - **Fonts:** Cormorant Garamond + DM Sans, bundled as assets (no runtime font fetching)
-- **Icons:** `lucide_icons` + custom SVGs via `flutter_svg`
+- **Icons:** Lucide (`lucide_icons_flutter`) + custom SVGs via `flutter_svg`
 
 ### Backend
 - **Runtime:** Node.js 22 with TypeScript (strict mode)
@@ -160,7 +161,8 @@ backend/
 
 ## Absolute Rules for AI Agents
 
-1. Never install a package not listed here without explicitly stating why and asking for approval
+1. Never install a package not listed here without explicitly stating why and asking for approval.
+   Never pin a version from the docs: add packages with `flutter pub add` / `npm install` to get the latest compatible version
 2. Never use `setState` in Flutter — always use BLoC
 3. Never write raw SQL in application code — use Supabase JS client typed methods (SQL lives only in `supabase/migrations/`)
 4. Never put business logic in a Flutter page widget

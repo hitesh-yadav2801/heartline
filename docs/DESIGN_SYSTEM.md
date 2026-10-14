@@ -514,8 +514,8 @@ mood submission, Memory Jar locket-expand) is in UI/UX spec §04. Follow it exac
 - Never use filled icons, with two exceptions: the nav active state (2px stroke) and filled hearts in
   emotional moments (Heart Sent, We're Good celebration, the Profile partner card).
 - Feelings and the Hug button use **emoji** (UI/UX spec §2.1), not custom icons.
-- Standard icons: `lucide_icons`.
-- Custom SVGs (rendered with `flutter_svg`, stored in `assets/icons/`): `open-heart`.
+- Standard icons: Lucide (`lucide_icons_flutter`).
+- Custom SVGs (rendered with `flutter_svg`, stored in `assets/icons/`, created by the task that adds the first SVG): `open-heart`.
   The Memory Jar header jar is drawn in code (`CustomPainter`) per the mocks.
 - Icons inherit color from context (`IconTheme`, or `colorFilter` for SVGs). Never hardcode an icon color.
 

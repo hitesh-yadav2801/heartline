@@ -91,7 +91,7 @@ They are designs for features already in `FEATURES.md`. No new features.
 | HRT-029 | **Resolution Space** — messages API, realtime sync, read-only after We're Good | `feature/resolution-space` | 11 | ⬜ |
 | HRT-030 | **We're Good + Memory Jar** — two-sided endpoints, 24h reminder, Memory Jar real data | `feature/were-good-memory-jar` | 11 | ⬜ |
 | HRT-031 | **Mood + Home** — mood submit/today (local day), partner mood realtime, 8PM nudge, Home on real data | `feature/mood-home` | 12 | ⬜ |
-| HRT-032 | **MVP hardening + beta** — notification handling (foreground toast, deep links), Hive offline Memory Jar, test pass, TestFlight + internal Android | `chore/mvp-beta` | 12 | ⬜ |
+| HRT-032 | **MVP hardening + beta** — notification handling (foreground toast, deep links), ObjectBox offline Memory Jar, test pass, TestFlight + internal Android | `chore/mvp-beta` | 12 | ⬜ |
 
 **Milestones:** MVP internal build (Week 11) · MVP beta (Week 12)
 

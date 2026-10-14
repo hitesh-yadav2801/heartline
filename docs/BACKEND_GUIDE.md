@@ -14,6 +14,8 @@ Read this before writing any Node.js/TypeScript backend code.
 - **Framework:** Express.js
 - **Language:** TypeScript (strict mode — `"strict": true` in tsconfig)
 - **Validation:** Zod (every route, no exceptions)
+- **Package versions:** never pinned in the docs. Add packages with `npm install <package>` so npm resolves the latest
+  compatible version; the real versions live only in `package.json` / `package-lock.json`.
 - **DB Client:** Supabase JS v2 (`@supabase/supabase-js`)
 - **AI:** Anthropic SDK (`@anthropic-ai/sdk`). The model comes from config, not code.
 - **Push:** Firebase Admin SDK (`firebase-admin`)

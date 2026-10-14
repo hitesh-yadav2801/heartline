@@ -49,14 +49,14 @@ Find any doc fast with `docs/INDEX.md`.
 - Supabase: Postgres + RLS + Realtime + Auth + Storage; migrations in `supabase/migrations/`
 - Firebase Cloud Messaging (client: `firebase_messaging`, server: `firebase-admin`)
 - Anthropic API, **server-side only**, with the model from config
-- Single dark theme · bundled fonts (Cormorant Garamond + DM Sans) · UTC everywhere
+- Portrait only · single dark theme · bundled fonts (Cormorant Garamond + DM Sans) · UTC everywhere
 
 ---
 
 ## 4. Hard Rules — Flutter
 
 1. Respect the layer rule: presentation → domain ← data. Domain is pure Dart. Features never import another feature's internals.
-2. BLoCs depend on **use cases**. Use cases depend on **repository contracts**. Only `data/` touches Dio/Supabase/Hive.
+2. BLoCs depend on **use cases**. Use cases depend on **repository contracts**. Only `data/` touches Dio/Supabase/ObjectBox.
 3. Repositories return `Either<Failure, T>`. `try/catch` exists only in repository implementations.
 4. No `setState` (local `AnimationController` in a `StatefulWidget` is the only exception).
 5. No `Navigator.push` / `Navigator.of(context)`. Use GoRouter named routes.
@@ -64,6 +64,7 @@ Find any doc fast with `docs/INDEX.md`.
    `AppRadius`, `AppDurations`, `AppTextStyles`.
 7. No user-visible string outside `AppStrings`.
 8. No package outside `FLUTTER_GUIDE.md` without asking first (state why + alternatives in the plan).
+   Docs never pin versions (`x.x.x`): add packages with `flutter pub add` so the latest compatible version is resolved.
 9. Every BLoC and use case has a unit test. BLoC events are NounVerb (`HeartRaised`), states are sealed + Equatable.
 10. No business logic in pages or widgets.
 

@@ -9,28 +9,36 @@ The Flutter project lives in `app/` at the repo root (see the repository layout 
 
 ---
 
-## Package Versions (pubspec.yaml reference)
+## Packages (pubspec.yaml reference)
+
+> **Versions are never pinned in the docs.** `x.x.x` below is a placeholder, not a version. Add every package with
+> `flutter pub add <package>` (dev: `flutter pub add --dev <package>`) so pub resolves the **latest version that is
+> compatible** with the Flutter SDK and the other dependencies. The real versions live only in `pubspec.yaml` and
+> `pubspec.lock`. Never copy a version number from a doc, an old example, or memory.
 
 ```yaml
 dependencies:
-  flutter_bloc: ^8.1.5
-  go_router: ^14.0.0
-  fpdart: ^1.1.0
-  dio: ^5.4.3
-  supabase_flutter: ^2.5.0
-  firebase_core: ^3.0.0          # required by firebase_messaging
-  firebase_messaging: ^15.0.0
-  hive_flutter: ^1.1.0
-  flutter_secure_storage: ^9.0.0
-  lottie: ^3.1.0
-  lucide_icons: ^0.0.2
-  flutter_svg: ^2.0.10           # custom icons (open-heart); feelings + hug use emoji
-  intl: ^0.19.0
-  equatable: ^2.0.5              # value equality for entities, states, failures
+  flutter_bloc: x.x.x
+  go_router: x.x.x
+  fpdart: x.x.x
+  dio: x.x.x
+  supabase_flutter: x.x.x
+  firebase_core: x.x.x                # required by firebase_messaging
+  firebase_messaging: x.x.x
+  objectbox: x.x.x                    # local storage / offline cache
+  objectbox_flutter_libs: x.x.x       # ObjectBox native libraries for Android + iOS
+  flutter_secure_storage: x.x.x
+  lottie: x.x.x
+  lucide_icons_flutter: x.x.x         # Lucide icon set
+  flutter_svg: x.x.x                  # custom icons (open-heart); feelings + hug use emoji
+  intl: x.x.x
+  equatable: x.x.x                    # value equality for entities, states, failures
 
 dev_dependencies:
-  bloc_test: ^9.1.7
-  mocktail: ^1.0.3
+  bloc_test: x.x.x
+  mocktail: x.x.x
+  build_runner: x.x.x                 # runs objectbox_generator
+  objectbox_generator: x.x.x          # generates objectbox.g.dart from @Entity classes
   flutter_test:
     sdk: flutter
 ```
@@ -42,9 +50,7 @@ Do not add any package not listed here without explicit approval.
 ```yaml
 flutter:
   uses-material-design: true
-  assets:
-    - assets/icons/
-    - assets/lottie/
+  # assets/icons/ and assets/lottie/ are added (folder + pubspec entry) by the first task that puts a file in them.
   fonts:
     # CormorantGaramond + DMSans — copy the block from DESIGN_SYSTEM.md
 ```
@@ -70,8 +76,8 @@ presentation  ──▶  domain  ◀──  data
                      use cases)
 ```
 
-- **domain** is pure Dart. It has no Flutter, Dio, Supabase, Hive, or JSON imports, and it depends on nothing else.
-- **data** implements the domain contracts. It is the only layer that talks to Dio, Supabase, Hive, secure storage, or mocks.
+- **domain** is pure Dart. It has no Flutter, Dio, Supabase, ObjectBox, or JSON imports, and it depends on nothing else.
+- **data** implements the domain contracts. It is the only layer that talks to Dio, Supabase, ObjectBox, secure storage, or mocks.
 - **presentation** depends on domain only (use cases and entities). It never imports a model, datasource, or repository implementation.
 - Dependencies point **inward**. If an import goes the other way, it is a bug.
 
@@ -93,7 +99,7 @@ lib/features/heart/
 │   │   └── heart_model.dart              # fromJson/toJson + toEntity()
 │   ├── datasources/
 │   │   ├── heart_remote_datasource.dart  # Dio / Supabase — throws exceptions
-│   │   ├── heart_local_datasource.dart   # Hive cache (only where offline is needed)
+│   │   ├── heart_local_datasource.dart   # ObjectBox cache (only where offline is needed)
 │   │   └── heart_mock_datasource.dart    # fixtures for UI-first development
 │   └── repositories/
 │       └── heart_repository_impl.dart    # catches exceptions → returns Failure
@@ -119,7 +125,7 @@ Never merge layers into one file.
 ```
 lib/
 ├── main.dart                  # runs bootstrap()
-├── bootstrap.dart             # init (Hive, Supabase, Firebase), error zones, runApp
+├── bootstrap.dart             # init (ObjectBox, Supabase, Firebase), portrait lock, error zones, runApp
 ├── app.dart                   # MaterialApp.router + root providers
 ├── core/
 │   ├── constants/             # AppColors, AppStrings, AppSpacing, AppRadius, AppSizes, AppShadows,
