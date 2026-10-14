@@ -1,7 +1,7 @@
 # HRT-000 — Repository Setup — Plan
 
 **Branch:** `chore/repo-setup`
-**Status:** Approved (2026-10-14), with the product owner's answers below
+**Status:** Approved (2026-10-14), with the product owner's answers below · Merged 2026-10-14 (PR #2)
 
 ## Goal & Scope
 - In scope:

@@ -56,43 +56,6 @@ the product owner's acceptance, or leave docs out of sync with the code.
 
 ## Current Task
 
-**Task ID:** HRT-000
-**Phase:** Part A — Complete App UI · Week 1
-**Feature:** Repository Setup
-**Branch:** `chore/repo-setup`
-
-### What to Build
-
-Initialize the monorepo so every later task has a clean, predictable home.
-
-### Acceptance Criteria
-
-- [ ] Git repository initialized; default branch `main`
-- [ ] Folder layout created exactly as in `ARCHITECTURE.md` → "Repository Layout"
-      (`docs/`, `docs/plans/`, `design/figma-mock/`, `app/`, `backend/`, `supabase/`, `.github/`). No `.gitkeep` files: folders without files
-      (`app/`, `backend/`, `supabase/`) are added to Git by the task that creates their first files
-- [ ] All docs moved into `docs/`; `AGENTS.md` at the repo root
-- [ ] Figma Make mock export placed in `design/figma-mock/` (reference only)
-- [ ] `README.md`: what Heartline is (2 lines), repo layout, links to `AGENTS.md` and `docs/INDEX.md`, prerequisites
-      (Flutter, Node 22, Supabase CLI), and placeholders for run instructions
-- [ ] `.gitignore` covering Flutter, Dart, Node, macOS, IDEs, and secrets (see `GIT_GUIDE.md` → "Never Commit")
-- [ ] `.github/pull_request_template.md` from `GIT_GUIDE.md`
-- [ ] Initial commit on `main` (docs only), then this task's work on `chore/repo-setup`
-- [ ] Remote created (GitHub) and `main` protected: PR required, no force-push (the product owner may do this step manually)
-
-### Do Not Touch
-- Doc contents (only move them; fix relative links if any break)
-
-### Manual Test Checklist (draft — finalize in plan)
-- [ ] Clone the repo fresh: the folder structure matches `ARCHITECTURE.md`
-- [ ] `AGENTS.md` and `docs/INDEX.md` open, and all links in INDEX resolve
-- [ ] `git status` is clean; no secrets or OS junk files are tracked
-- [ ] Opening a PR shows the PR template
-
----
-
-## Up Next (pre-written)
-
 **Task ID:** HRT-001
 **Phase:** Part A — Complete App UI · Week 1
 **Branch:** `feature/project-scaffold`
@@ -210,9 +173,21 @@ app/assets/ (fonts, icons, lottie)
 
 ---
 
+## Up Next
+
+**Task ID:** HRT-002 — Shared components (`feature/shared-components`). Details to be written by the product owner;
+see the HRT-002 row in `ROADMAP.md`.
+
+---
+
 ## Completed Tasks
 
-_None yet — project just started._
+### HRT-000 — Repository Setup ✅
+- Branch: `chore/repo-setup` · Merged: 2026-10-14 (PR #2, squash) · Plan: docs/plans/HRT-000-repo-setup.md
+- Notes: monorepo initialized, Figma mock in `design/figma-mock/`, README, `.gitignore`, PR template.
+  Doc changes: Node.js 22 (AGENTS, ARCHITECTURE, BACKEND_GUIDE); GIT_GUIDE now requires a PR for every merge,
+  bans `.gitkeep` files and `Co-Authored-By`/AI attribution trailers. `app/`, `backend/`, `supabase/` are created
+  by the tasks that add their first files.
 
 <!-- Entry format:
 ### HRT-XXX — <Feature> ✅
