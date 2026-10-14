@@ -152,11 +152,13 @@ class _NavItem extends StatelessWidget {
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: onTap,
+        // Fill the pill's height so the indicator sits below the label, not over it.
         child: Stack(
+          fit: StackFit.expand,
           alignment: Alignment.center,
           children: [
             Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TweenAnimationBuilder<Color?>(
                   tween: ColorTween(end: color),
