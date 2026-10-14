@@ -24,7 +24,7 @@ android {
         applicationId = "app.heartline.heartline"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        minSdk = 24 // docs/ARCHITECTURE.md → Min SDK
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
