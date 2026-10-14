@@ -23,7 +23,7 @@
 - **Icons:** `lucide_icons` + custom SVGs via `flutter_svg`
 
 ### Backend
-- **Runtime:** Node.js with TypeScript (strict mode)
+- **Runtime:** Node.js 22 with TypeScript (strict mode)
 - **Framework:** Express.js
 - **Deployment:** Google Cloud Run (containerized)
 - **Validation:** Zod on every route — no unvalidated request bodies ever
