@@ -24,19 +24,19 @@ class HeartlineBackground extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // Bloom 1: 600×400 at 85% / -10%.
+          // Bloom 1: ellipse with radii 600×400, centred at 85% / -10%.
           Positioned(
-            left: size.width * 0.85 - AppSizes.bloomRoseWidth / 2,
-            top: size.height * -0.10 - AppSizes.bloomRoseHeight / 2,
-            width: AppSizes.bloomRoseWidth,
-            height: AppSizes.bloomRoseHeight,
+            left: size.width * 0.85 - AppSizes.bloomRoseRadiusX,
+            top: size.height * -0.10 - AppSizes.bloomRoseRadiusY,
+            width: AppSizes.bloomRoseRadiusX * 2,
+            height: AppSizes.bloomRoseRadiusY * 2,
             child: Transform.scale(
-              scaleY: AppSizes.bloomRoseHeight / AppSizes.bloomRoseWidth,
+              scaleY: AppSizes.bloomRoseRadiusY / AppSizes.bloomRoseRadiusX,
               child: const OverflowBox(
-                maxWidth: AppSizes.bloomRoseWidth,
-                maxHeight: AppSizes.bloomRoseWidth,
+                maxWidth: AppSizes.bloomRoseRadiusX * 2,
+                maxHeight: AppSizes.bloomRoseRadiusX * 2,
                 child: SizedBox.square(
-                  dimension: AppSizes.bloomRoseWidth,
+                  dimension: AppSizes.bloomRoseRadiusX * 2,
                   child: DecoratedBox(
                     decoration: BoxDecoration(gradient: AppGradients.bloomRose),
                   ),
@@ -44,12 +44,12 @@ class HeartlineBackground extends StatelessWidget {
               ),
             ),
           ),
-          // Bloom 2: 500×500 at 10% / 110%.
+          // Bloom 2: circle with radius 500, centred at 10% / 110%.
           Positioned(
-            left: size.width * 0.10 - AppSizes.bloomCrimsonSize / 2,
-            top: size.height * 1.10 - AppSizes.bloomCrimsonSize / 2,
-            width: AppSizes.bloomCrimsonSize,
-            height: AppSizes.bloomCrimsonSize,
+            left: size.width * 0.10 - AppSizes.bloomCrimsonRadius,
+            top: size.height * 1.10 - AppSizes.bloomCrimsonRadius,
+            width: AppSizes.bloomCrimsonRadius * 2,
+            height: AppSizes.bloomCrimsonRadius * 2,
             child: const DecoratedBox(
               decoration: BoxDecoration(gradient: AppGradients.bloomCrimson),
             ),

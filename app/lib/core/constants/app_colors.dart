@@ -66,7 +66,9 @@ abstract final class AppColors {
   // ── Global background (UI spec §11) ──────────────────────────
   static const Color bloomRose = Color(0x1AC4687A); // Dusty Rose @ 10%
   static const Color bloomCrimson = Color(0x2E8B1A4A); // Velvet Crimson @ 18%
-  static const Color grain = Color(0x0AFDF6F0); // Warm Cream @ 4%
+  static const Color grain = Color(
+    0x05FFFFFF,
+  ); // white 50% dots in a 4% layer (mock)
   static const Color particle = Color(0x26C4687A); // Dusty Rose @ 15%
 
   // ── Empty states (UI spec §09) ───────────────────────────────

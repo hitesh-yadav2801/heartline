@@ -46,11 +46,12 @@ abstract final class AppSizes {
   static const double blurNavBar = 32.0;
 
   // Global background (UI spec §11)
-  static const double bloomRoseWidth = 600.0;
-  static const double bloomRoseHeight = 400.0;
-  static const double bloomCrimsonSize = 500.0;
+  // Bloom sizes are CSS radial-gradient radii (600px 400px / 500px 500px).
+  static const double bloomRoseRadiusX = 600.0;
+  static const double bloomRoseRadiusY = 400.0;
+  static const double bloomCrimsonRadius = 500.0;
   static const double grainSpacing = 3.0;
-  static const double grainDot = 0.6;
+  static const double grainDot = 2.0;
   static const int particleCount = 12;
   static const double particleMin = 2.0;
   static const double particleMax = 4.0;
