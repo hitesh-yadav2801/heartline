@@ -65,6 +65,7 @@ chore(deps): add equatable [HRT-001]
 **Commit habits**
 - Small, logical commits. Each one compiles and makes sense alone. Not "WIP", and not one giant commit.
 - Don't mix unrelated changes. Formatting-only changes get their own `style:` commit.
+- No `Co-Authored-By` or other AI/tool attribution trailers in commit messages or PR descriptions.
 - Commit doc updates (schema/API) alongside the code that required them.
 
 ---
@@ -139,6 +140,7 @@ git checkout main && git pull && git branch -d feature/heart-raise-ui
 - Build output: `app/build/`, `.dart_tool/`, `node_modules/`, `backend/dist/`, `coverage/`
 - IDE/OS junk: `.idea/`, `.vscode/` (except shared settings if agreed), `.DS_Store`
 - Large binaries (videos, raw design exports) beyond the reference mock in `design/`
+- `.gitkeep` placeholder files. A folder is added to Git when its first real file is.
 
 `google-services.json`, `GoogleService-Info.plist`, and `firebase_options.dart` hold client identifiers, not secrets.
 Committing them is acceptable. Decide in HRT-025 and record the decision there.
