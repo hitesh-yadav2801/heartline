@@ -10,7 +10,7 @@ Read this before writing any Node.js/TypeScript backend code.
 
 ## Stack
 
-- **Runtime:** Node.js 20+
+- **Runtime:** Node.js 22
 - **Framework:** Express.js
 - **Language:** TypeScript (strict mode — `"strict": true` in tsconfig)
 - **Validation:** Zod (every route, no exceptions)

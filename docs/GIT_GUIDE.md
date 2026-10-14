@@ -17,6 +17,8 @@ main ──●────────●────────●────
 
 - **`main`** is protected. It is always stable and builds/runs. Nobody commits to it directly.
 - Every task from `ROADMAP.md` gets **one branch**, created from the latest `main`.
+- **Every branch (`feature/`, `fix/`, `hotfix/`, `chore/`, `refactor/`, `docs/`, `test/`) merges into `main` only
+  through a GitHub Pull Request.** Never merge locally into `main` (`git merge` on `main`) and never push to `main` directly.
 - Branches are short-lived. Merge within the task, then delete.
 - Releases are **tags** on `main` (see Releases), not long-lived release branches.
 
@@ -63,13 +65,14 @@ chore(deps): add equatable [HRT-001]
 **Commit habits**
 - Small, logical commits. Each one compiles and makes sense alone. Not "WIP", and not one giant commit.
 - Don't mix unrelated changes. Formatting-only changes get their own `style:` commit.
+- No `Co-Authored-By` or other AI/tool attribution trailers in commit messages or PR descriptions.
 - Commit doc updates (schema/API) alongside the code that required them.
 
 ---
 
 ## Pull Requests
 
-Every branch merges into `main` through a PR.
+Every branch merges into `main` through a PR. There are no exceptions: no local merges into `main`, no direct pushes.
 
 **Title:** same format as a commit: `feat(heart): open a heart UI [HRT-008]`
 **Merge method:** **Squash and merge.** The squash commit keeps the PR title. Delete the branch after merge.
@@ -137,6 +140,7 @@ git checkout main && git pull && git branch -d feature/heart-raise-ui
 - Build output: `app/build/`, `.dart_tool/`, `node_modules/`, `backend/dist/`, `coverage/`
 - IDE/OS junk: `.idea/`, `.vscode/` (except shared settings if agreed), `.DS_Store`
 - Large binaries (videos, raw design exports) beyond the reference mock in `design/`
+- `.gitkeep` placeholder files. A folder is added to Git when its first real file is.
 
 `google-services.json`, `GoogleService-Info.plist`, and `firebase_options.dart` hold client identifiers, not secrets.
 Committing them is acceptable. Decide in HRT-025 and record the decision there.
@@ -157,6 +161,7 @@ If a secret is ever committed: **rotate it immediately**. Removing it from histo
 ## Rules for AI Agents
 
 1. Never commit directly to `main`. Never force-push to `main`. Never rewrite shared history.
+   Every branch reaches `main` only through a Pull Request.
 2. Create the task branch **after** the plan is approved, using the branch name in `ROADMAP.md`.
 3. One task per branch. Don't sneak unrelated changes in. Note them as follow-ups instead.
 4. Never merge a PR yourself unless the product owner explicitly says so after manual testing passes.
