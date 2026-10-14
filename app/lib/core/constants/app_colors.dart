@@ -5,7 +5,9 @@ import 'package:flutter/painting.dart';
 abstract final class AppColors {
   // ── Brand ────────────────────────────────────────────────────
   static const Color velvetCrimson = Color(0xFF8B1A4A); // Primary brand
-  static const Color dustyRose = Color(0xFFC4687A); // Secondary brand, active states
+  static const Color dustyRose = Color(
+    0xFFC4687A,
+  ); // Secondary brand, active states
   static const Color blush = Color(0xFFEBA8B4); // Highlights, selected states
   static const Color petal = Color(0xFFF5D6DC); // Hover, skeleton loaders
 
@@ -13,9 +15,15 @@ abstract final class AppColors {
   static const Color secondary = dustyRose;
 
   // ── Accents ──────────────────────────────────────────────────
-  static const Color emberGold = Color(0xFFC8863A); // Milestones, special moments
-  static const Color sageWhisper = Color(0xFF7A9E8E); // We're Good state, success
-  static const Color lavenderDusk = Color(0xFF9B89C4); // AI, Unheard, partner avatar, Appreciation
+  static const Color emberGold = Color(
+    0xFFC8863A,
+  ); // Milestones, special moments
+  static const Color sageWhisper = Color(
+    0xFF7A9E8E,
+  ); // We're Good state, success
+  static const Color lavenderDusk = Color(
+    0xFF9B89C4,
+  ); // AI, Unheard, partner avatar, Appreciation
   static const Color dawnBlue = Color(0xFF7BA3C4); // Lonely / Sad
   static const Color warmAmber = Color(0xFFD4943A); // Overwhelmed / Anxious
 
@@ -26,7 +34,9 @@ abstract final class AppColors {
   // ── Surfaces & text ──────────────────────────────────────────
   static const Color deepPlum = Color(0xFF1A0A2E); // app background
   static const Color midnightRose = Color(0xFF2D1B3D); // cards, sheets
-  static const Color warmCream = Color(0xFFFDF6F0); // text on gradients/buttons, display text
+  static const Color warmCream = Color(
+    0xFFFDF6F0,
+  ); // text on gradients/buttons, display text
   static const Color ivory = Color(0xFFFAF0E8); // primary text
   static const Color textPrimary = ivory;
   static const Color textSecondary = Color(0xFFC4A8B4);
@@ -45,9 +55,13 @@ abstract final class AppColors {
   static const Color inputFill = Color(0x802D1B3D); // rgba(45,27,61,0.5)
   static const Color inputBorder = Color(0x33C4687A); // rgba(196,104,122,0.2)
   static const Color cardBorder = Color(0x1AC4687A); // rgba(196,104,122,0.1)
-  static const Color tintRose12 = Color(0x1FC4687A); // icon button bg, secondary press
+  static const Color tintRose12 = Color(
+    0x1FC4687A,
+  ); // icon button bg, secondary press
   static const Color tintRose25 = Color(0x40C4687A); // icon button pressed
-  static const Color scrim = Color(0xB31A0A2E); // modal overlay rgba(26,10,46,0.7)
+  static const Color scrim = Color(
+    0xB31A0A2E,
+  ); // modal overlay rgba(26,10,46,0.7)
 
   // ── Global background (UI spec §11) ──────────────────────────
   static const Color bloomRose = Color(0x1AC4687A); // Dusty Rose @ 10%

@@ -71,7 +71,8 @@ class _GrainPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final points = <Offset>[
       for (var y = 0.0; y < size.height; y += AppSizes.grainSpacing)
-        for (var x = 0.0; x < size.width; x += AppSizes.grainSpacing) Offset(x, y),
+        for (var x = 0.0; x < size.width; x += AppSizes.grainSpacing)
+          Offset(x, y),
     ];
     final paint = Paint()
       ..color = AppColors.grain
@@ -92,7 +93,8 @@ class _Particles extends StatefulWidget {
   State<_Particles> createState() => _ParticlesState();
 }
 
-class _ParticlesState extends State<_Particles> with SingleTickerProviderStateMixin {
+class _ParticlesState extends State<_Particles>
+    with SingleTickerProviderStateMixin {
   // One controller covers a full cycle of every particle: LCM(12, 14, 16, 18, 20) = 5040s,
   // so the loop is seamless and value * cycle is the elapsed time in seconds.
   static const int _cycleSeconds = 5040;
@@ -130,7 +132,8 @@ class _ParticlesState extends State<_Particles> with SingleTickerProviderStateMi
 }
 
 class _ParticlePainter extends CustomPainter {
-  _ParticlePainter(this.animation, this.cycleSeconds) : super(repaint: animation);
+  _ParticlePainter(this.animation, this.cycleSeconds)
+    : super(repaint: animation);
 
   final Animation<double> animation;
   final int cycleSeconds;
@@ -149,18 +152,25 @@ class _ParticlePainter extends CustomPainter {
 
     for (var i = 0; i < AppSizes.particleCount; i++) {
       final duration = minSeconds + (i % 5) * _durationStepSeconds;
-      final delay = (i * _delayStepSeconds) % AppDurations.particleMin.inSeconds;
+      final delay =
+          (i * _delayStepSeconds) % AppDurations.particleMin.inSeconds;
       final raw = ((elapsed + delay) % duration) / duration;
       final t = AppCurves.breathe.transform(raw);
 
-      final diameter = AppSizes.particleMin + (i % 3).clamp(0, AppSizes.particleMax - AppSizes.particleMin);
+      final diameter =
+          AppSizes.particleMin +
+          (i % 3).clamp(0, AppSizes.particleMax - AppSizes.particleMin);
       final scale = _startScale + (1 - _startScale) * t;
-      final envelope = raw < _fadeInEnd ? raw / _fadeInEnd : 1 - (raw - _fadeInEnd) / (1 - _fadeInEnd);
+      final envelope = raw < _fadeInEnd
+          ? raw / _fadeInEnd
+          : 1 - (raw - _fadeInEnd) / (1 - _fadeInEnd);
 
       final x = size.width * ((i * 83) % 100) / 100;
       final y = size.height + (size.height * _endY - size.height) * t;
 
-      paint.color = AppColors.particle.withValues(alpha: AppColors.particle.a * envelope);
+      paint.color = AppColors.particle.withValues(
+        alpha: AppColors.particle.a * envelope,
+      );
       canvas.drawCircle(Offset(x, y), diameter * scale / 2, paint);
     }
   }

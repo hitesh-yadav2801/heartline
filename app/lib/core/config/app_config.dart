@@ -4,8 +4,9 @@
 class AppConfig {
   const AppConfig({required this.useMocks});
 
-  factory AppConfig.fromEnvironment() =>
-      const AppConfig(useMocks: bool.fromEnvironment('USE_MOCKS', defaultValue: true));
+  factory AppConfig.fromEnvironment() => const AppConfig(
+    useMocks: bool.fromEnvironment('USE_MOCKS', defaultValue: true),
+  );
 
   final bool useMocks;
 }

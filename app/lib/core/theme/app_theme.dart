@@ -9,41 +9,43 @@ abstract final class AppTheme {
   static final ThemeData theme = _build();
 
   static ThemeData _build() {
-    final colorScheme = ColorScheme.fromSeed(
-      seedColor: AppColors.velvetCrimson,
-      brightness: Brightness.dark,
-    ).copyWith(
-      primary: AppColors.velvetCrimson,
-      onPrimary: AppColors.warmCream,
-      secondary: AppColors.dustyRose,
-      onSecondary: AppColors.warmCream,
-      surface: AppColors.midnightRose,
-      onSurface: AppColors.textPrimary,
-      onSurfaceVariant: AppColors.textSecondary,
-      error: AppColors.error,
-      onError: AppColors.warmCream,
-      outline: AppColors.glassBorder,
-      outlineVariant: AppColors.divider,
-      scrim: AppColors.scrim,
-    );
+    final colorScheme =
+        ColorScheme.fromSeed(
+          seedColor: AppColors.velvetCrimson,
+          brightness: Brightness.dark,
+        ).copyWith(
+          primary: AppColors.velvetCrimson,
+          onPrimary: AppColors.warmCream,
+          secondary: AppColors.dustyRose,
+          onSecondary: AppColors.warmCream,
+          surface: AppColors.midnightRose,
+          onSurface: AppColors.textPrimary,
+          onSurfaceVariant: AppColors.textSecondary,
+          error: AppColors.error,
+          onError: AppColors.warmCream,
+          outline: AppColors.glassBorder,
+          outlineVariant: AppColors.divider,
+          scrim: AppColors.scrim,
+        );
 
-    final textTheme = const TextTheme(
-      displayLarge: AppTextStyles.displayXl,
-      displayMedium: AppTextStyles.displayLg,
-      displaySmall: AppTextStyles.displayMd,
-      headlineMedium: AppTextStyles.headline,
-      titleLarge: AppTextStyles.title,
-      titleMedium: AppTextStyles.label,
-      bodyLarge: AppTextStyles.bodyLg,
-      bodyMedium: AppTextStyles.bodyMd,
-      labelLarge: AppTextStyles.label,
-      labelMedium: AppTextStyles.caption,
-      labelSmall: AppTextStyles.micro,
-      bodySmall: AppTextStyles.caption,
-    ).apply(
-      bodyColor: AppColors.textPrimary,
-      displayColor: AppColors.textPrimary,
-    );
+    final textTheme =
+        const TextTheme(
+          displayLarge: AppTextStyles.displayXl,
+          displayMedium: AppTextStyles.displayLg,
+          displaySmall: AppTextStyles.displayMd,
+          headlineMedium: AppTextStyles.headline,
+          titleLarge: AppTextStyles.title,
+          titleMedium: AppTextStyles.label,
+          bodyLarge: AppTextStyles.bodyLg,
+          bodyMedium: AppTextStyles.bodyMd,
+          labelLarge: AppTextStyles.label,
+          labelMedium: AppTextStyles.caption,
+          labelSmall: AppTextStyles.micro,
+          bodySmall: AppTextStyles.caption,
+        ).apply(
+          bodyColor: AppColors.textPrimary,
+          displayColor: AppColors.textPrimary,
+        );
 
     return ThemeData(
       useMaterial3: true,

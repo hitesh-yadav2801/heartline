@@ -1,16 +1,26 @@
 import 'package:flutter/animation.dart';
 
 abstract final class AppDurations {
-  static const Duration micro = Duration(milliseconds: 100); // toggles, press-in
-  static const Duration quick = Duration(milliseconds: 200); // chip selection
-  static const Duration normal = Duration(milliseconds: 300); // page transitions, reveals
-  static const Duration back = Duration(milliseconds: 250); // back navigation
-  static const Duration slow = Duration(milliseconds: 500); // bottom sheets, modals
-  static const Duration emotional = Duration(milliseconds: 800); // Heart open, Hug send
-  static const Duration ceremonial = Duration(milliseconds: 1200); // We're Good, onboarding
-  static const Duration heartbeat = Duration(milliseconds: 1200); // Hug button, waiting dots
-  static const Duration ripple = Duration(milliseconds: 1600); // Hug ripple rings
-  static const Duration pageEnter = Duration(milliseconds: 500); // screen content fade-up
+  // toggles, press-in
+  static const Duration micro = Duration(milliseconds: 100);
+  // chip selection
+  static const Duration quick = Duration(milliseconds: 200);
+  // page transitions, reveals
+  static const Duration normal = Duration(milliseconds: 300);
+  // back navigation
+  static const Duration back = Duration(milliseconds: 250);
+  // bottom sheets, modals
+  static const Duration slow = Duration(milliseconds: 500);
+  // Heart open, Hug send
+  static const Duration emotional = Duration(milliseconds: 800);
+  // We're Good, onboarding
+  static const Duration ceremonial = Duration(milliseconds: 1200);
+  // Hug button, waiting dots, Heart Sent
+  static const Duration heartbeat = Duration(milliseconds: 1200);
+  // Hug ripple rings
+  static const Duration ripple = Duration(milliseconds: 1600);
+  // screen content fade-up
+  static const Duration pageEnter = Duration(milliseconds: 500);
 
   // Global background particles: each drifts upward over 12–20s.
   static const Duration particleMin = Duration(seconds: 12);
