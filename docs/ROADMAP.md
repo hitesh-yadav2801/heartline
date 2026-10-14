@@ -48,7 +48,7 @@ They are designs for features already in `FEATURES.md`. No new features.
 
 | ID | Task | Branch | Week | Status |
 |----|------|--------|------|--------|
-| HRT-000 | **Repository setup** — monorepo folders, docs moved into `docs/`, `AGENTS.md`, README, `.gitignore`, PR template, `main` branch protected | `chore/repo-setup` | 1 | ⬜ |
+| HRT-000 | **Repository setup** — monorepo folders, docs moved into `docs/`, `AGENTS.md`, README, `.gitignore`, PR template, `main` branch protected | `chore/repo-setup` | 1 | ✅ |
 | HRT-001 | **Project scaffold** — Flutter app in `app/`, clean-arch folders, tokens, fonts, single theme, GoRouter + nav shell, background | `feature/project-scaffold` | 1 | ⬜ |
 | HRT-002 | **Shared components** — buttons, inputs, cards, glass card, chips, filter chips, avatars, pulse dots, shimmer, section label, empty state, bottom sheet, top bar | `feature/shared-components` | 1 | ⬜ |
 | HRT-003 | **Mock data layer** — `AppConfig` + `USE_MOCKS`, DI composition root, domain entities + repository contracts + mock datasources for all features, Elena & Mira fixtures | `feature/mock-data-layer` | 1 | ⬜ |
