@@ -69,7 +69,8 @@ Initialize the monorepo so every later task has a clean, predictable home.
 
 - [ ] Git repository initialized; default branch `main`
 - [ ] Folder layout created exactly as in `ARCHITECTURE.md` → "Repository Layout"
-      (`docs/`, `docs/plans/`, `design/figma-mock/`, `app/`, `backend/`, `supabase/`, `.github/`). Empty folders get `.gitkeep`
+      (`docs/`, `docs/plans/`, `design/figma-mock/`, `app/`, `backend/`, `supabase/`, `.github/`). No `.gitkeep` files: folders without files
+      (`app/`, `backend/`, `supabase/`) are added to Git by the task that creates their first files
 - [ ] All docs moved into `docs/`; `AGENTS.md` at the repo root
 - [ ] Figma Make mock export placed in `design/figma-mock/` (reference only)
 - [ ] `README.md`: what Heartline is (2 lines), repo layout, links to `AGENTS.md` and `docs/INDEX.md`, prerequisites
